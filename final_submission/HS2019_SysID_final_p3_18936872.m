@@ -31,7 +31,7 @@ function [p3_b_ML,p3_b_MAP,p3_cv_error,p3_prior_best] = HS2019_SysID_final_p3_18
     fprintf('--------------------TASK ONE--------------------------------------\n');
     fprintf('------------------------------------------------------------------\n');
     fprintf('The regressor has the form y(k|theta) = [u(k-1), u(k-2), u(k-3)...,u(k-8)][b_1;b_2;b_3...;b_8]\n');
-    fprintf('Y(theta) = Phi * theta, the ML estimate maximizes the log likelihood of observing the data which means minimizing -log(P(Y|theta))\n');
+    fprintf('Y(theta) = Phi * theta, the ML estimate maximizes the log likelihood of observaing the data which meand minimizing -log(P(Y|theta))\n');
     fprintf('This is also equivilant to minimizing -log(P(e=Y-Phi*theta|theta)) the probbaility of observing the error vector\n');
     fprintf('so P(Y|theta) = ((1/sqrt(0.5*PI))^N*exp(-1/0.5 * sum_k=1_to_N(e(k, theta)^2)))\n');
     fprintf('if we take the derivative and set it to zero, we get 4*sum_k=1_N((Y(K)- PHI*THETA)*PHI) = 0\n');
@@ -201,7 +201,7 @@ function [p3_b_ML,p3_b_MAP,p3_cv_error,p3_prior_best] = HS2019_SysID_final_p3_18
     fprintf('------------------------------------------------------------------\n');
     fprintf('--------------------TASK TWO--------------------------------------\n');
     fprintf('------------------------------------------------------------------\n');
-    fprintf('Since p(theta) = (1/sqrt((2*pi)^n * det(S)))*exp(-1/2 *(theta^T)*(S^-1)*theta)\n');
+    fprintf('Since p(theta) = (1/sqrt((2*pi)^n * det(S)))*exo(-1/2 *(theta^T)*(S^-1)*theta)\n');
     fprintf('Since p(y | theta) = ((1/sqrt(0.5*PI))^N*exp(-1/0.5 * sum_k=1_to_N(e(k, theta)^2))) as stated in the last task\n');
     fprintf('Therefore using bayes theorm we get the posterior proportional to p(theta)*p(y|theta)\n');
     fprintf('we get the following equation to minimize argmin_theta -1/0.5 * sum_k=1_to_N((y(k) - Phi*theta)^2) - 1/2 * theta^T * S^-1 * theta\n');
@@ -398,7 +398,7 @@ function [p3_b_ML,p3_b_MAP,p3_cv_error,p3_prior_best] = HS2019_SysID_final_p3_18
 %     lgd.FontSize = 12;
 %     lgd.Location = 'northwest';
     
-    fprintf('Figure %d shows cross validation to choose the appropiate covariance matrix for the MAP estimate.\n', figure_num);
+    fprintf('Figure %d shows cross validation to choose the appropiate covariance matrix for the MAP estimate.\n\n', figure_num);
     figure(figure_num);
     figure_num = figure_num + 1;
     fig = gcf;

@@ -142,7 +142,7 @@ fprintf('R(i,j) = 0.2 if 0 < abs(i - j) <= 3\n');
 fprintf('R(i,j) = 0 otherwise\n');
 fprintf('The BLUE estimate is the best linear unbiased estimate where\n');
 fprintf('cov{theta_hat_z}=((Phi^T)(R^-1)(Phi))^-1 <= cov{theta_hat} for any unbiased estimate\n');
-fprintf('However, since we make a false assumption of c1 =0 and c2 = 0, then the estimate we get will be biased\n');
+fprintf('However, since we make a falso assumption of c1 =0 and c2 = 0, then the estimate we get will be biased\n');
 %-----------------------------------------------------------------------
 %Getting the Covariance Matrix
 %-----------------------------------------------------------------------
@@ -406,7 +406,7 @@ fprintf('Calculating y(39|38, theta) and y(38|37, theta) with the same method gi
 fprintf('This mismatch can come from the fact that c1 and c2 that we used are not the right ones or the theta estimate provided is far from the true value\n');
 fprintf('The error that is supposed to be used in the equation is supposed to come from the same prediction model - which it doesnt seem to come from the same model\n');
 fprintf('Another method that was tried is to assume the error given is iid noise n(k) that goes into a filter H that produces e(k)\n');
-fprintf('Non linear equations were solved to get paramters of H but then the estimate was also bad for 39\n');
+fprintf('We solved non linear equations to get paramters of H but then the estimate was also bad for 39\n');
 %to get to y_hat(40|39, theta_hat) then we need 39, 38, 37 measurments
 Phi_40 = [-p1_y_past(1) -p1_y_past(2) -p1_y_past(3) p1_u_past(1) p1_u_past(2) p1_u_past(3) p1_pred_err(1) p1_pred_err(2)];
 Theta_40 = [p1_theta_hat;c1;c2];
